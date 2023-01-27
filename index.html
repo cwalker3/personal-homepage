@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&display=swap');
+    *, html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .time {
+      margin-top: 5em;
+      margin-bottom: 2em;
+      font-size: 2em;
+    }
+
+    .quoteContainer {
+      width: 70%;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .quoteBody{
+      font-size: 2em;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    .quoteAuthor {
+      font-size: 1.5em;
+    }
+
+    input[type=text] {
+      width: 500px;
+      padding: 0.5em;
+    }
+
+  </style>
+</head>
+<body>
+    <p class="time"></p>
+  <div class="quoteContainer">
+    <p class="quoteBody"></p>
+    <p class="quoteAuthor"></p>
+  </div>
+
+  <form action="https://google.com/search">
+    <input type="text" name="q" autofocus="true">
+    <input type="submit" value="Search">
+  </form>
+
+  <script>
+      const api_url = 'https://stoicquotesapi.com/v1/api/quotes/random';
+
+      async function getQuote() {
+        try {
+          const response = await fetch(api_url);
+
+          if(!response.ok){
+            throw Error(response.statusText);
+          }
+
+          const json = await response.json();
+          displayQuote(json);
+        } catch (err) {
+          console.log(err)
+          alert('Failed to fetch new quote');
+          }
+      }
+      
+      function displayQuote(quote) {
+        const quoteBody = document.querySelector('.quoteBody');
+        const quoteAuthor = document.querySelector('.quoteAuthor')
+
+        quoteBody.textContent = quote.body
+        quoteAuthor.textContent = '- ' + quote.author
+      }
+
+      getQuote();
+
+      function updateClock() {
+          var now = new Date(), // current date
+          months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; // you get the idea
+          time = now.getHours() + ':' + ("0" + now.getMinutes()).slice(-2),
+
+          // a cleaner way than string concatenation
+          date = [months[now.getMonth() + 1],
+                  now.getDate(), 
+                  now.getFullYear()].join(' ');
+
+          // set the content of the element with the ID time to the formatted string
+          document.querySelector('.time').innerHTML = [date, time].join(' / ');
+
+          // call this function again in 1000ms
+          setTimeout(updateClock, 1000);
+      }
+      updateClock(); // initial call
+
+
+
+    
+                      
+  </script>
+</body>
+</html>
