@@ -5,8 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage</title>
-  <link rel="stylesheet" href="style.css">
-  <script src='script.js'></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src='javascript/update-clock.js' defer></script>
+  <script src='javascript/main.js' defer></script>
+
 </head>
 <body>
     <p class="time"></p>
@@ -15,19 +17,24 @@
     <p class="quoteAuthor"></p>
   </div>
 
-  <form action="https://google.com/search">
+  <form class='search_form' action="https://google.com/search">
     <input type="text" name="q" autofocus="true" autocomplete="off">
     <input type="submit" value="Search">
   </form>
-  <div class="shortcut-container">
-    <div class="productive">
-      <div class="shortcut"><a href="https://theodinproject.com"><img src="images/odin-color.png" alt="Odin Logo"></a></div>
-      <div class="shortcut"></div>
-      <div class="shortcut"></div>
-      <div class="shortcut"></div>
-      <div class="shortcut"></div>
-    </div>
 
+  <form action="" class="domain_radios">
+    <label for="google">Google</label>
+    <input type="radio" name="domain" id="google" value="https://google.com/search" checked="checked">
+    <label for="youtube">Youtube</label>
+    <input type="radio" name="domain" id="youtube" value="https://youtube.com/results">
+  </form>
+
+  <div class="shortcut-container">
+    <div class="shortcut grow"><a href="https://theodinproject.com"><img class="shortcut-image" src="images/odin-color.png" alt="Odin Logo"></a></div>
+    <div class="shortcut grow"><a href="https://github.com/cwalker3?tab=repositories"><img class="shortcut-image" src="images/github.png" alt="GitHub Logo"></div></a>
+    <div class="shortcut localhost"><a href="http://localhost:3000/"><p class="localhost-text">Localhost</p></a></div>
+    <div class="shortcut grow"></div>
+    <div class="shortcut grow"></div>
   </div>
 </body>
 </html>
