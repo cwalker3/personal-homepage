@@ -15,24 +15,9 @@ body {
 }
 
 .time {
-  margin-top: 5em;
-  margin-bottom: 2em;
-  font-size: 2em;
-}
-
-.quoteContainer {
-  width: 70%;
-  text-align: center;
-  margin-bottom: 1em;
-}
-
-.quoteBody{
-  font-size: 2em;
-  font-family: 'Noto Sans', sans-serif;
-}
-
-.quoteAuthor {
-  font-size: 1.5em;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 input[type=text] {
@@ -76,3 +61,11 @@ a {
   font-weight: bold;
   font-size: 1.3rem;
 }
+
+.radio-container {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
