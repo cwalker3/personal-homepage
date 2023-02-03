@@ -18,23 +18,25 @@
   </div>
 
   <form class='search_form' action="https://google.com/search">
-    <input type="text" name="q" autofocus="true" autocomplete="off">
+    <input class="search-input" type="text" name="q" autofocus="true" autocomplete="off">
     <input type="submit" value="Search">
   </form>
 
   <form action="" class="domain_radios">
     <label for="google">Google</label>
-    <input type="radio" name="domain" id="google" value="https://google.com/search" checked="checked">
+    <input type="radio" name="domain" id="google" value="https://google.com/search" data-parameter-name="q" checked="checked">
     <label for="youtube">Youtube</label>
-    <input type="radio" name="domain" id="youtube" value="https://youtube.com/results">
+    <input type="radio" name="domain" id="youtube" value="https://youtube.com/results" data-parameter-name="q">
+    <label for="amazon">Amazon</label>
+    <input type="radio" name="domain" id="amazon" value="https://amazon.com/s" data-parameter-name="k">
   </form>
 
   <div class="shortcut-container">
-    <div class="shortcut grow"><a href="https://theodinproject.com"><img class="shortcut-image" src="images/odin-color.png" alt="Odin Logo"></a></div>
-    <div class="shortcut grow"><a href="https://github.com/cwalker3?tab=repositories"><img class="shortcut-image" src="images/github.png" alt="GitHub Logo"></div></a>
+    <div class="shortcut"><a href="https://theodinproject.com"><img class="shortcut-image" src="images/odin-color.png" alt="Odin Logo"></a></div>
+    <div class="shortcut"><a href="https://github.com/cwalker3?tab=repositories"><img class="shortcut-image" src="images/github.png" alt="GitHub Logo"></div></a>
     <div class="shortcut localhost"><a href="http://localhost:3000/"><p class="localhost-text">Localhost</p></a></div>
-    <div class="shortcut grow"></div>
-    <div class="shortcut grow"></div>
+    <div class="shortcut"><a href="https://mail.google.com"><img class="shortcut-image" src="images/gmail.png" alt="Gmail Logo"></a></div>
+    <div class="shortcut"></div>
   </div>
 </body>
 </html>
